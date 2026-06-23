@@ -14,3 +14,4 @@ public abstract class Jogador implements JogadorInterface {
     public char getCor() {
         return cor;
     }
+}
