@@ -1,17 +1,11 @@
 public class JogadorHumano extends Jogador {
 
-    public JogadorHumano(char cor) {
-        super(cor);
+    public JogadorHumano(String nome) {
+        super(nome);
     }
 
     @Override
-    public boolean jogar(
-            Tabuleiro tabuleiro,
-            String nomeDaPeca,
-            int numeroDaCasa) {
-
-        System.out.println("Jogador humano jogando...");
-
-        return true;
+    public void jogar() {
+        System.out.println(nome + " está jogando...");
     }
 }

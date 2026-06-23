@@ -1,17 +1,12 @@
 public abstract class Jogador implements JogadorInterface {
 
-    protected char cor;
+    protected String nome;
 
-    public Jogador(char cor) {
-
-        if (cor != 'b' && cor != 'p') {
-            System.out.println("Cor deve ser b ou p");
-        }
-
-        this.cor = cor;
+    public Jogador(String nome) {
+        this.nome = nome;
     }
 
-    public char getCor() {
-        return cor;
+    public String getNome() {
+        return nome;
     }
 }

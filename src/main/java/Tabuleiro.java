@@ -1,40 +1,24 @@
 public class Tabuleiro {
 
-    private String[][] casas = new String[8][8];
+    private Peca[][] grid = new Peca[3][3];
 
-    public Tabuleiro() {
-
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                casas[i][j] = "   ";
-            }
-        }
-
-        colocarPecas();
-        mostrar();
+    public void colocar(int x, int y, Peca peca) {
+        grid[x][y] = peca;
     }
 
-    public void colocarPecas() {
-
-        Peca reiBranco = new Peca("K0b");
-        Peca reiPreto = new Peca("K0p");
-
-        casas[0][4] = reiPreto.getNome();
-        casas[7][4] = reiBranco.getNome();
-    }
-
-    public boolean acabouOJogo() {
-        return false;
+    public Peca get(int x, int y) {
+        return grid[x][y];
     }
 
     public void mostrar() {
-
-        for (int i = 0; i < 8; i++) {
-
-            for (int j = 0; j < 8; j++) {
-                System.out.print("[" + casas[i][j] + "]");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (grid[i][j] == null) {
+                    System.out.print("- ");
+                } else {
+                    System.out.print(grid[i][j].getSimbolo() + " ");
+                }
             }
-
             System.out.println();
         }
     }

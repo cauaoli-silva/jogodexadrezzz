@@ -1,0 +1,12 @@
+public class Peca {
+
+    private String simbolo;
+
+    public Peca(String simbolo) {
+        this.simbolo = simbolo;
+    }
+
+    public String getSimbolo() {
+        return simbolo;
+    }
+}
