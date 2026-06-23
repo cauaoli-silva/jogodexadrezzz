@@ -11,7 +11,6 @@ public class Tabuleiro {
         }
 
         colocarPecas();
-
         mostrar();
     }
 

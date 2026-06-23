@@ -5,9 +5,7 @@ public abstract class Jogador implements JogadorInterface {
     public Jogador(char cor) {
 
         if (cor != 'b' && cor != 'p') {
-            throw new IllegalArgumentException(
-                    "Cor deve ser b ou p"
-            );
+            System.out.println("Cor deve ser b ou p");
         }
 
         this.cor = cor;
@@ -16,4 +14,3 @@ public abstract class Jogador implements JogadorInterface {
     public char getCor() {
         return cor;
     }
-}
