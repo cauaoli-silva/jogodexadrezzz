@@ -1,49 +1,24 @@
-import java.util.Scanner;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class JogoDeXadrez implements Jogo {
+public class JogoDaVelhaTest {
 
-    @Override
-    public void iniciar() {
+    @Test
+    public void testeCriarTabuleiro() {
 
         Tabuleiro tabuleiro = new Tabuleiro();
-        Scanner sc = new Scanner(System.in);
 
-        String resposta = "S";
-
-        while (resposta.equalsIgnoreCase("S")) {
-
-            tabuleiro.mostrar();
-
-            System.out.print("Qual peça você quer mover? ");
-            String peca = sc.nextLine();
-
-            System.out.print("Para qual casa você deseja mover? ");
-            String casa = sc.nextLine();
-
-            if (tabuleiro.moverPeca(peca, casa)) {
-
-                System.out.println("Peça movida com sucesso!");
-
-            } else {
-
-                System.out.println("Não foi possível mover a peça. A casa já está ocupada ou a peça não existe.");
-            }
-
-            tabuleiro.mostrar();
-
-            System.out.print("Deseja continuar jogando? (S/N): ");
-            resposta = sc.nextLine();
-        }
-
-        sc.close();
-
-        System.out.println("Jogo encerrado.");
+        assertNotNull(tabuleiro);
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void testeCasaLivre() {
 
-        JogoDeXadrez jogo = new JogoDeXadrez();
+        Tabuleiro tabuleiro = new Tabuleiro();
 
-        jogo.iniciar();
+        // Casa vazia
+        assertTrue(tabuleiro.casaLivre("A3"));
+
+        // Casa ocupada
+        assertFalse(tabuleiro.casaLivre("A1"));
     }
-}

@@ -6,38 +6,33 @@ public class JogoDeXadrez implements Jogo {
     public void iniciar() {
 
         Tabuleiro tabuleiro = new Tabuleiro();
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        String resposta = "S";
+        tabuleiro.mostrar();
 
-        while (resposta.equalsIgnoreCase("S")) {
+        String continuar = "S";
 
-            tabuleiro.mostrar();
+        while (continuar.equalsIgnoreCase("S")) {
 
             System.out.print("Qual peça você quer mover? ");
-            String peca = sc.nextLine();
+            String peca = scanner.nextLine();
 
             System.out.print("Para qual casa você deseja mover? ");
-            String casa = sc.nextLine();
+            String casa = scanner.nextLine();
 
-            if (tabuleiro.moverPeca(peca, casa)) {
-
-                System.out.println("Peça movida com sucesso!");
-
+            if (tabuleiro.casaLivre(casa)) {
+                System.out.println("Movimento realizado.");
             } else {
-
-                System.out.println("Não foi possível mover a peça. A casa já está ocupada ou a peça não existe.");
+                System.out.println("Não pode mover. A casa está ocupada.");
             }
 
             tabuleiro.mostrar();
 
-            System.out.print("Deseja continuar jogando? (S/N): ");
-            resposta = sc.nextLine();
+            System.out.print("Deseja continuar jogando? (S/N) ");
+            continuar = scanner.nextLine();
         }
 
-        sc.close();
-
-        System.out.println("Jogo encerrado.");
+        scanner.close();
     }
 
     public static void main(String[] args) {
@@ -45,5 +40,7 @@ public class JogoDeXadrez implements Jogo {
         JogoDeXadrez jogo = new JogoDeXadrez();
 
         jogo.iniciar();
+
+        System.out.println("Cauã da Silva Oliveira");
     }
 }
