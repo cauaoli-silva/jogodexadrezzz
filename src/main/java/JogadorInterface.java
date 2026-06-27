@@ -1,3 +1,8 @@
 public interface JogadorInterface {
-    void jogar();
+
+    boolean jogar(
+            Tabuleiro tabuleiro,
+            String nomeDaPeca,
+            int numeroDaCasa
+    );
 }

@@ -1,12 +1,12 @@
 public abstract class Jogador implements JogadorInterface {
 
-    protected String nome;
+    protected char cor;
 
-    public Jogador(String nome) {
-        this.nome = nome;
+    public Jogador(char cor) {
+        this.cor = cor;
     }
 
-    public String getNome() {
-        return nome;
+    public char getCor() {
+        return cor;
     }
 }

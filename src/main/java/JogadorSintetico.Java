@@ -10,7 +10,7 @@ public class JogadorSintetico extends Jogador {
             String nomeDaPeca,
             int numeroDaCasa) {
 
-        System.out.println("Jogador sintetico jogando...");
+        System.out.println("Jogador sintético jogando...");
 
         return true;
     }
